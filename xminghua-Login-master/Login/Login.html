@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Search System</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap1.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	</head>
+	
+	<body>
+	<div class="box">
+		<div class="login-box">
+			<div class="login-title text-center">
+				<h1>
+					<small>Search System</small>
+				</h1>
+			</div>
+			<div class="login-content ">
+				<div class="form">
+					<form id="modifyPassword" class="form-horizontal" action="" method="post">
+						<div class="form-group">
+							<div class="col-xs-10 col-xs-offset-1">
+								<div class="input-group">
+									<span class="input-group-addon"><span
+										class="glyphicon glyphicon-user"></span></span>
+									<select id="select1" childId="sel02" select style="width:125px; height:40px" childDataPath=" http://localhost/kj/trainplan.do?method=" >
+
+										<option value="">time</option>
+
+										<option value="1">option 1</option>
+
+										<option value="2">option 2</option>
+
+
+
+								</div>
+								</select>
+								<select id="select2"  select style="width:125px; height:40px">
+
+									<option value="">Choose</option>
+
+									<option value="1">option 1</option>
+
+									<option value="2">option 2</option>
+
+
+							</div>
+							</select>
+								<button type="button"style="width:80px; height:40px" id="submit">submit</button>
+
+						</div>
+
+
+
+						</select>
+
+						<div id="choosed"></div>
+						<script type="text/javascript">
+							var add = document.getElementById('submit'),
+									sel = document.getElementById('select1'),
+									se2 = document.getElementById('select2'),
+									choseContainer = document.getElementById('choosed');
+							add.onclick = function(){
+								if(sel.selectedIndex < 0 && se2.selectedIndex < 0){
+									return alert('error');
+								}
+								var text = sel.options[sel.selectedIndex].innerHTML,
+										newNode = document.createElement("div");
+								var text2 = se2.options[sel.selectedIndex].innerHTML,
+										newNode = document.createElement("div");
+								newNode.innerHTML = text+text2;
+								choseContainer.appendChild(newNode)
+							}
+						</script>
+
+
+
+
+
+
+
+
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+	
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap1.min.js"></script>
+
+</html>
